@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!-- XML DTD "empresa.dtd":(Isidre Guixà, iguixa@xtec.cat, Abril 2012) -->
+<!ELEMENT empresa ((departaments, empleats))>
+  <!ELEMENT departaments ((dept*))>
+    <!ELEMENT dept ((nom,localitat?))>
+      <!ATTLIST dept codi ID #REQUIRED>
+    <!ELEMENT nom (#PCDATA)>
+    <!ELEMENT localitat (#PCDATA)>
+  <!ELEMENT empleats ((emp*))>
+    <!ELEMENT emp ((cognom, ofici?, cap?, dataAlta?, salari?, comissio?))>
+      <!ATTLIST emp
+        codi ID #REQUIRED
+        dept IDREF #REQUIRED
+        cap IDREF #IMPLIED
+      >
+    <!ELEMENT cognom (#PCDATA)>
+    <!ELEMENT ofici (#PCDATA)>
+    <!ELEMENT dataAlta (#PCDATA)>
+    <!ELEMENT salari (#PCDATA)>
+    <!ELEMENT comissio (#PCDATA)>
+
